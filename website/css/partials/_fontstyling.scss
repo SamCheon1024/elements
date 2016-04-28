@@ -1,0 +1,52 @@
+h1,
+h2,
+h3,
+h4 {
+	color:$color-light;
+	//text-transform:uppercase;
+}
+p,
+.intro p {
+	font-weight:300;
+	margin-left: 2em;
+	margin-right: 2em;
+	padding-right:5em;
+}
+
+h1 {
+	font-weight:300;
+	font-size:5em;
+	margin-top:-80px;
+	//letter-spacing:5px;
+}
+h2 {
+	font-weight: 400;
+	font-size: 2em;
+}
+h3 {
+	font-weight:300;
+	font-size: 1.4em;
+	display: block;
+}
+h3.h3-emotion {
+	float: right;
+}
+h4 {
+	font-weight:300;
+	display: block;
+	text-align: center;
+}
+p {
+	color:$color-light;
+}
+.intro p {
+	color:$color-dark;
+}
+a {
+	color:$color-dark;
+	text-decoration:none;
+
+	&:hover {
+		text-decoration:none;
+	}
+}
