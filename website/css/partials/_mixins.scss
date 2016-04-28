@@ -1,0 +1,136 @@
+@mixin centered-child {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin clearfix {
+	&:after {
+		content:'';
+		display:table;
+		clear:both;
+	}
+}
+
+@mixin compact-list {
+	list-style-type: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+
+@mixin container-make($prefix:''){
+	.container {
+		@include centered-child;
+		@if($prefix == 'xl' or $prefix == 'lg') {
+			min-width:map-get($container-width,$prefix);
+		}
+		@else {
+			width: auto;
+		}
+	}
+}
+
+/*group creates distinct sections for different applied effects*/
+@mixin container-group($prefix:''){
+	.container-group {
+		
+	}
+}
+
+
+@function class-stack($type,$middlefix,$size,$list:'') {
+
+	@for $i from 1 through $size {
+		@if($list!='') {
+			$list: "#{$list}, ";
+		}
+		$list: "#{$list}.#{$type}#{$middlefix}-#{$i}";
+	}
+	@return $list;
+}
+
+// #{class-stack('col','-sm',12)} {
+// 	float:left;
+// }
+
+@mixin make-columns {
+	[class*='col-'] {
+		/* *= selects all of the elements that have col-
+		[id] makes an attribute for an id in css*/
+		float:left;
+		display: inline-block;
+	}
+	[class*='col-centered'] {
+		/* *= selects all of the elements that have col-
+		[id] makes an attribute for an id in css*/
+		float:none;
+		text-align:left;
+	}
+	.row {
+		@include clearfix;
+		padding-top: 1em;
+
+		&.with-gutters {
+			margin-right:-($gutter-width / 2);
+			margin-left:-($gutter-width / 2);
+			&>[class*='col-1'] {
+				padding-right:($gutter-width / 2);
+				padding-left:($gutter-width / 2);
+			}
+		}
+	}
+}
+@mixin make-liquid-columns($prefix:'') {
+	@for $i from 1 through $column-length {
+		.col#{$prefix}-#{$i} {
+			width:percentage($i / $column-length);
+		}
+		.offset#{$prefix}-#{$i} {
+			margin-left:percentage($i / $column-length);
+		}
+	}
+}
+
+
+@mixin make-main-utilities($prefix:'') {
+	.pull#{$prefix}-left {
+		float:left;
+	}
+	.pull#{$prefix}-right {
+		float:right;
+	}
+	.pull#{$prefix}-none {
+		float:none;
+	}
+	.pull#{$prefix}-clear {
+		clear:both;
+	}
+	.pull#{$prefix}-center {
+		@include centered-child;
+	}
+}
+
+@mixin make-box-utilities($prefix:''){
+	@each $pre-short,$pre-long in $boxes-map {
+		@each $suf-short,$suf-long in $sizes-map {
+			@each $pos-short,$pos-long in $positions-map {
+				.#{$pre-short}#{$prefix}-#{$pos-short}#{$suf-short}{
+					#{$pre-long}-#{$pos-long}: $suf-long;
+				}
+			}
+
+			.#{$pre-short}#{$prefix}-h#{$suf-short}{
+				#{$pre-long}-left: $suf-long;
+				#{$pre-long}-right: $suf-long;
+			}
+			.#{$pre-short}#{$prefix}-v#{$suf-short}{
+				#{$pre-long}-top: $suf-long;
+				#{$pre-long}-bottom: $suf-long;
+			}
+			.#{$pre-short}#{$prefix}-#{$suf-short}{
+				#{$pre-long}: $suf-long;
+			}
+		}
+	}
+}
