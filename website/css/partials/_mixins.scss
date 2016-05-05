@@ -34,7 +34,6 @@
 /*group creates distinct sections for different applied effects*/
 @mixin container-group($prefix:''){
 	.container-group {
-		
 	}
 }
 
@@ -64,12 +63,13 @@
 	[class*='col-centered'] {
 		/* *= selects all of the elements that have col-
 		[id] makes an attribute for an id in css*/
-		float:none;
-		text-align:left;
+		text-align: center;
 	}
 	.row {
 		@include clearfix;
 		padding-top: 1em;
+		max-width:$site-width;
+		margin: 0 auto;
 
 		&.with-gutters {
 			margin-right:-($gutter-width / 2);

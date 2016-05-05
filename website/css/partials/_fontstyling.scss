@@ -1,16 +1,11 @@
-h1,
-h2,
-h3,
-h4 {
+//LIGHT COLOR
+h1, h2, h3, h4, p, .others h4, .quiz-button {
 	color:$color-light;
-	//text-transform:uppercase;
 }
-p,
-.intro p {
-	font-weight:300;
-	margin-left: 2em;
-	margin-right: 2em;
-	padding-right:5em;
+
+// DARK COLOR
+.intro p, .cycles p, .cycles h2, .cycles h3, .quiz-section h3 {
+	color:$color-dark;
 }
 
 h1 {
@@ -19,7 +14,7 @@ h1 {
 	margin-top:-80px;
 	//letter-spacing:5px;
 }
-h2 {
+h2, .quiz-button {
 	font-weight: 400;
 	font-size: 2em;
 }
@@ -36,17 +31,26 @@ h4 {
 	display: block;
 	text-align: center;
 }
-p {
-	color:$color-light;
+p, .footer a {
+	font-weight:300;
 }
-.intro p {
-	color:$color-dark;
-}
-a {
+#menubar a {
 	color:$color-dark;
 	text-decoration:none;
 
 	&:hover {
 		text-decoration:none;
 	}
+}
+.footer a {
+	color:$color-light;
+	text-decoration:none;
+	font-size: 0.8em;
+
+	&:hover {
+		text-decoration:none;
+	}
+}
+.footer-p {
+	font-size: 0.6em;
 }

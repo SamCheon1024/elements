@@ -14,16 +14,12 @@
 	height:auto;
 }
 
-img {
-	float: left;
-}
-
 /* -----------------------------------------------------------
 	NAV BAR
 -----------------------------------------------------------*/
 
-#menubar{
-    background-color: rgba(255,255,255,.8);
+#menubar {
+    background-color: rgba(255,255,255,0.9);
     width:100%;
     height:50px;
     display:block;
@@ -31,118 +27,271 @@ img {
     top:0;
     left:0;
     }
-.logo{
+.logo {
     float:left;
     width: 70px;
     height: 70px;
     margin:10px 0px 0px 25px;
     }
-nav{
+#menubar nav {
     float:right;
     margin: 20px 25px 0px 0px;
     }
-nav ul li{
+nav ul li {
     list-style:none;
     float:left;
     }
-nav a {
+#menubar nav a {
   padding-left:20px;
   padding-right:20px;
   }
-nav a:hover {
+#menubar a:hover {
   color: #e93a45;
     }
-.active {
+#menubar .active {
   color:#e93a45;
 }
 
 /* -----------------------------------------------------------
-	CENTERED ROWS AND COLUMNS
+  FOOTER
+-----------------------------------------------------------*/
+
+.footer {
+  background-color: #221e1f;
+  min-height: 8vh;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+.footer nav {
+  float: left;
+  margin: 35px 25px 0px 0px;
+}
+.footer nav a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.footer a:hover {
+  color: #e93a45;
+  }
+.footer .active {
+  color:#e93a45;
+}
+.footer-logo {
+  float: left;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto 0.5em auto;
+}
+
+/* -----------------------------------------------------------
+	ROWS AND COLUMNS
 -----------------------------------------------------------*/
 
 /* centered columns styles */
 .row-centered {
     text-align:center;
 }
+div.row.row-smiley {
+  max-width: 900px;
+}
+.img-cycles {
+  max-width: 600px;
+  padding-bottom: 3em;
+}
+.col-padding {
+  padding-left:2em;
+}
+
+/* -----------------------------------------------------------
+  IMAGE ANIMATION
+  https://designshack.net/articles/css/joshuajohnson-2/
+-----------------------------------------------------------*/
+
+.pic {
+  float: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 90px;
+  margin: 0 auto 1em auto;  
+  overflow: hidden;
+}
+.morph {
+  -webkit-transition: all 0.5s;
+     -moz-transition: all 0.5s;
+       -o-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+          transition: all 0.5s;
+}
+.morph:hover {
+  border-radius: 50%;
+  -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+.blur:hover {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+  -webkit-filter: blur(5px);
+}
 
 /* -----------------------------------------------------------
   GROUP STYLINGS
 -----------------------------------------------------------*/
+
+//HERO
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
-    height:35vh;
+    min-height:35vh;
 }
 .hero-element {
-  float: right;
-  margin-top: 100px;
-  width: 30vw;
-  height:20vh;
-  background-repeat: no-repeat;
-  background-size: contain;
+    float: right;
+    margin-top: 100px;
+    width: 30vw;
+    height:20vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 1em;
 }
+.hero-metal {
+    background-image: url('../img/metal_bg_1.jpg');
+}
+.hero-wood {
+  background-image: url('../img/wood_bg_1.jpg');
+}
+
+//INTRO
 .intro {
-  background-color: white;
-  padding: 2em;
+    color: #fff;
+    padding: 2em;
 }
 .intro-element {
-  float: right;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 13vw;
-  height: 13vh;
-  margin-right: 5em;
-  margin-top: 0.5em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: auto;
+    height: 13vh;
+    margin: 0 auto;
 }
+
+//EMOTION
 .emotion {
     background-repeat: no-repeat;
     background-size: cover;
-    height:30vh;
+    min-height:25vh;
+    padding: 2em;
 }
-.emotion-smiley-positive, .emotion-smiley-negative {
-    margin: 0 auto;
+.emotion-smiley {
+    margin: 0 auto 1.5em auto;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100px;
     height: 100px;
 }
-.emotion-smiley-positive {
-    background-image: url('../img/courage_icon.svg');
+.emotion-metal {
+  background-image: url('../img/metal_bg_2.jpg');
 }
-.emotion-smiley-negative {
-    background-image: url('../img/grief_icon.svg');
+.emotion-wood {
+  background-image: url('../img/wood_bg_2.jpg');
 }
-.personality {
+
+//PERSONALITY
+.personality-metal {
     background-color: #858585;
     padding: 2em;
 }
+.personality-wood {
+    background-color: #6e9981;
+    padding: 2em;
+}
 .personality-image {
-    float: right;
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
-    height: 30vh;
     margin-top: 0.5em;
     margin-bottom: 1em;
 }
 
+//CYCLES
+.cycles {
+  padding: 3em;
+}
+.cycles-images-intro {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 150px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+.cycles-image {
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 30vh;
+    margin: 0 auto;
+}
 
-/* -----------------------------------------------------------
-  METAL GROUP STYLINGS
------------------------------------------------------------*/
+//OTHERS
+.others-metal {
+    background-color: #858585;
+    padding-bottom: 2em;
+}
+.others-wood {
+    background-color: #6e9981;
+    padding-bottom: 2em;
+}
+.others-image {
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 90px;
+    margin: 0 auto 1em auto;
+}
+.others-box {
+    width: 90px;
+    background-color: #fff;
+    height: 90px;
+    border-radius: 15px;
+    margin: 0 auto 1em auto;
+}
 
-.hero-metal {
-    background-image: url('../img/metal_bg_1.jpg');
+//COLOR BOX
+.box-white {
+  background-color: #fff;
 }
-.hero-element-metal {
-  background-image: url('../img/metal_icon_200px.svg');
+.box-green {
+  background-color: #b0d79c;
 }
-.intro-element-metal {
-  background-image: url('../img/metal_character.svg');
+
+//QUIZ BUTTON
+.quiz-section {
+    background-color: #fff;
+    padding-top: 5em;
+    padding-bottom: 4em;
 }
-.emotion-metal {
-  background-image: url('../img/metal_bg_2.jpg');
+.quiz-button {
+    background: #01c1ca;
+    width: 160px;
+    height: 55px;
+    border-radius: 15px;
+    border: 0px;
+    margin: 0 auto 1em auto;
+    cursor: pointer;
 }
-.personality-image-metal {
-  background-image: url('../img/metal_pic_1.jpg');
+.quiz-button:hover {
+    background: #e93a45;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1s;
+
 }
