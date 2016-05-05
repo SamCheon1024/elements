@@ -23,17 +23,16 @@ h3 {
 	font-size: 1.4em;
 	display: block;
 }
-h3.h3-emotion {
-	float: right;
-}
 h4 {
 	font-weight:300;
 	display: block;
 	text-align: center;
 }
-p, .footer a {
+p {
 	font-weight:300;
+	padding-bottom: 1em;
 }
+
 #menubar a {
 	color:$color-dark;
 	text-decoration:none;
@@ -43,14 +42,15 @@ p, .footer a {
 	}
 }
 .footer a {
+	font-weight: 300;
 	color:$color-light;
 	text-decoration:none;
-	font-size: 0.8em;
+	font-size: 1em;
 
 	&:hover {
 		text-decoration:none;
 	}
 }
 .footer-p {
-	font-size: 0.6em;
+	font-size: 0.8em;
 }
