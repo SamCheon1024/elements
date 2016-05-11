@@ -155,12 +155,6 @@ div.row.row-smiley {
     background-size: contain;
     padding: 1em;
 }
-.hero-metal {
-    background-image: url('../img/metal_bg_1.jpg');
-}
-.hero-wood {
-  background-image: url('../img/wood_bg_1.jpg');
-}
 
 //INTRO
 .intro {
@@ -189,21 +183,10 @@ div.row.row-smiley {
     width: 100px;
     height: 100px;
 }
-.emotion-metal {
-  background-image: url('../img/metal_bg_2.jpg');
-}
-.emotion-wood {
-  background-image: url('../img/wood_bg_2.jpg');
-}
 
 //PERSONALITY
-.personality-metal {
-    background-color: #858585;
-    padding: 2em;
-}
-.personality-wood {
-    background-color: #6e9981;
-    padding: 2em;
+.personality {
+  padding: 2em;
 }
 .personality-image {
     background-repeat: no-repeat;
@@ -239,13 +222,8 @@ div.row.row-smiley {
 }
 
 //OTHERS
-.others-metal {
-    background-color: #858585;
-    padding-bottom: 2em;
-}
-.others-wood {
-    background-color: #6e9981;
-    padding-bottom: 2em;
+.others {
+  padding-bottom: 2em;
 }
 .others-image {
     float: left;
@@ -261,20 +239,14 @@ div.row.row-smiley {
     height: 90px;
     border-radius: 15px;
     margin: 0 auto 1em auto;
-}
-
-//COLOR BOX
-.box-white {
-  background-color: #fff;
-}
-.box-green {
-  background-color: #b0d79c;
+    border: 2px solid #fff;
+    padding-bottom: 2em;
 }
 
 //QUIZ BUTTON
 .quiz-section {
     background-color: #fff;
-    padding-top: 5em;
+    padding-top: 4em;
     padding-bottom: 4em;
 }
 .quiz-button {
@@ -293,5 +265,93 @@ div.row.row-smiley {
     -o-transition: all 1s;
     -ms-transition: all 1s;
     transition: all 1s;
+}
 
+/* -----------------------------------------------------------
+  SEPARATE ELEMENTS STYLINGS
+-----------------------------------------------------------*/
+
+//SEPARATE BACKGROUND IMAGE - HERO
+.hero-metal {
+    background-image: url('../img/metal_bg_1.jpg');
+}
+.hero-wood {
+  background-image: url('../img/wood_bg_1.jpg');
+}
+.hero-water {
+  background-image: url('../img/water_bg_1.jpg');
+}
+.hero-fire {
+  background-image: url('../img/fire_bg_1.jpg');
+}
+.hero-earth {
+  background-image: url('../img/earth_bg_1.jpg');
+}
+
+//SEPARATE BACKGROUND IMAGE - EMOTION
+.emotion-metal {
+  background-image: url('../img/metal_bg_2.jpg');
+}
+.emotion-wood {
+  background-image: url('../img/wood_bg_2.jpg');
+}
+.emotion-water {
+  background-image: url('../img/water_bg_2.jpg');
+}
+.emotion-fire {
+  background-image: url('../img/fire_bg_2.jpg');
+}
+.emotion-earth {
+  background-image: url('../img/earth_bg_2.jpg');
+}
+
+//SEPARATE COLOR - PERSONALITY
+.personality-metal {
+    background-color: #858585;
+}
+.personality-wood {
+    background-color: #6e9981;
+}
+.personality-water {
+    background-color: #09122e;
+}
+.personality-fire {
+    background-color: #f36157;
+}
+.personality-earth {
+    background-color: #f5b85b;
+}
+
+//SEPARATE COLOR - OTHERS
+.others-metal {
+    background-color: #858585;
+}
+.others-wood {
+    background-color: #6e9981;
+}
+.others-water {
+    background-color: #09122e;
+}
+.others-fire {
+    background-color: #f36157;
+}
+.others-earth {
+    background-color: #f5b85b;
+}
+
+//SEPARATE COLOR - BOX
+.box-metal {
+  background-color: #fff;
+}
+.box-wood {
+  background-color: #b0d79c;
+}
+.box-water {
+  background-color: #231f20;
+}
+.box-fire {
+  background-color: #e71c24;
+}
+.box-earth {
+  background-color: #f7dd7e;
 }
