@@ -4,7 +4,7 @@ h1, h2, h3, h4, p, .others h4, .quiz-button {
 }
 
 // DARK COLOR
-.intro p, .cycles p, .cycles h2, .cycles h3, .quiz-section h3 {
+.personality-p, .intro p, .cycles p, .cycles h2, .cycles h3, .quiz-section h3 {
 	color:$color-dark;
 }
 
@@ -14,9 +14,18 @@ h1 {
 	margin-top:-80px;
 	//letter-spacing:5px;
 }
+.h1home {
+	margin-top: 23vh;
+}
 h2, .quiz-button {
 	font-weight: 400;
 	font-size: 2em;
+}
+.h2home {
+	margin-top: 4vh;
+	font-size: 2.5em;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
 }
 h3 {
 	font-weight:300;

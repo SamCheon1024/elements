@@ -64,7 +64,7 @@ nav ul li {
 }
 .footer nav {
   float: left;
-  margin: 35px 25px 0px 0px;
+  margin: 35px 25px 10px 0px;
 }
 .footer nav a {
   padding-left: 10px;
@@ -90,6 +90,11 @@ nav ul li {
 /* centered columns styles */
 .row-centered {
     text-align:center;
+}
+.row-vertical {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 div.row.row-smiley {
   max-width: 700px;
@@ -168,6 +173,15 @@ div.row.row-smiley {
     height: 15vh;
     margin: 0 auto;
 }
+.intro-home {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    max-height: 48vh;
+    margin: 0 auto 3em auto;
+    padding: 0.5em;
+    float: right;
+}
 
 //EMOTION
 .emotion {
@@ -194,6 +208,13 @@ div.row.row-smiley {
     width: 100%;
     margin-top: 0.5em;
     margin-bottom: 1em;
+}
+.personality-home {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: auto;
+    height: 40vh;
+    margin: 0 auto;
 }
 
 //CYCLES
@@ -272,6 +293,9 @@ div.row.row-smiley {
 -----------------------------------------------------------*/
 
 //SEPARATE BACKGROUND IMAGE - HERO
+.hero-home {
+    background-image: url('../img/home_bg_1.jpg');
+}
 .hero-metal {
     background-image: url('../img/metal_bg_1.jpg');
 }
@@ -289,6 +313,9 @@ div.row.row-smiley {
 }
 
 //SEPARATE BACKGROUND IMAGE - EMOTION
+.emotion-home {
+  background-image: url('../img/home_bg_2.jpg');
+}
 .emotion-metal {
   background-image: url('../img/metal_bg_2.jpg');
 }
