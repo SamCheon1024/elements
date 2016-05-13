@@ -67,9 +67,11 @@
 	}
 	.row {
 		@include clearfix;
-		padding-top: 1em;
 		max-width:$site-width;
 		margin: 0 auto;
+		&+& {
+			padding-top: 1em;
+		}
 
 		&.with-gutters {
 			margin-right:-($gutter-width / 2);
@@ -108,6 +110,18 @@
 	}
 	.pull#{$prefix}-center {
 		@include centered-child;
+	}
+	.display#{$prefix}-n {
+		display:none;
+	}
+	.display#{$prefix}-b {
+		display:block;
+	}
+	.display#{$prefix}-ib {
+		display:inline-block;
+	}
+	.display#{$prefix}-init {
+		display:initial;
 	}
 }
 

@@ -21,7 +21,7 @@
 #menubar {
     background-color: rgba(255,255,255,0.9);
     width:100%;
-    height:50px;
+    min-height:50px;
     display:block;
     position:fixed;
     top:0;
@@ -31,7 +31,8 @@
     float:left;
     width: 70px;
     height: 70px;
-    margin:10px 0px 0px 25px;
+    margin:-5px 0px 0px 25px;
+    position: absolute;
     }
 #menubar nav {
     float:right;
@@ -64,8 +65,7 @@ nav ul li {
 }
 .footer nav {
   display: inline-block;
-  float: left;
-  margin: 35px 25px 10px 0px;
+  margin: 1em auto 0.5em auto;
 }
 .footer nav a {
   padding-left: 10px;
@@ -94,8 +94,9 @@ nav ul li {
 }
 .row-vertical {
     display: inline-block;
-    vertical-align: middle;
-    float: none;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
 }
 div.row.row-smiley {
   max-width: 700px;
@@ -316,6 +317,7 @@ div.row.row-smiley {
 //SEPARATE BACKGROUND IMAGE - EMOTION
 .emotion-home {
   background-image: url('../img/home_bg_2.jpg');
+  position: relative;
 }
 .emotion-metal {
   background-image: url('../img/metal_bg_2.jpg');
