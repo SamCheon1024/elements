@@ -123,6 +123,29 @@
 	.display#{$prefix}-init {
 		display:initial;
 	}
+	.p#{$prefix}-r {
+		position:relative;
+	}
+	.p#{$prefix}-a {
+		position:absolute;
+	}
+	.p#{$prefix}-f {
+		position:fixed;
+	}
+	.p#{$prefix}-s {
+		position:static;
+	}
+	.padding#{$prefix}-lr {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+	.padding#{$prefix}-tb {
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+	.padding#{$prefix}-n {
+		padding: none;
+	}
 }
 
 @mixin make-box-utilities($prefix:''){
