@@ -12,11 +12,15 @@ body{
 	width: 100%;
 }
 
+
 #qbox {
 	width: 80%;
 	max-width: 1000px;
 	margin: auto;
-	background-color: #BEE5E3;
+	border-color:#BEE5E3;
+	border-style: solid;
+	border-width: 5px;
+	/*background-color: #BEE5E3;*/
 	height: 600px;
 	padding:2% 5%;
     overflow: hidden;
@@ -99,7 +103,11 @@ p {
 	margin: auto;
 	margin: 5px 0px;
 }
-
+.back{
+	padding: 10px;
+	max-width: 100px;
+	background-color: #F2EFDC;
+}
 .myanswer {
 	background-color: #ED6344;
 	color: #F2EFDC;
