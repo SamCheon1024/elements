@@ -1,10 +1,12 @@
+@font-face {font-family: Poppins;}
+
 //LIGHT COLOR
 h1, h2, h3, h4, p, .others h4, .quiz-button {
 	color:$color-light;
 }
 
 // DARK COLOR
-.personality-p, .intro p, .cycles p, .cycles h2, .cycles h3, .quiz-section h3 {
+.personality-p, .intro p, .cycles p, .cycles h2, .cycles h3, .quiz-section h3, p.quiz, form {
 	color:$color-dark;
 }
 
@@ -39,6 +41,9 @@ h4 {
 p {
 	font-weight:300;
 	padding-bottom: 1em;
+}
+p.quiz {
+	font-weight: 600;
 }
 
 #menubar a {

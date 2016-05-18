@@ -1,5 +1,3 @@
-@font-face {font-family: Neometric; src: url('../fonts/Neometric.ttf');}
-
 /* -----------------------------------------------------------
 	MAIN STYLES
 -----------------------------------------------------------*/
@@ -12,6 +10,28 @@
 	border-radius:$size-sm;
 	padding:$size-md;
 	height:auto;
+}
+
+/* ------------------------------------------------------------
+  QUIZ-FORM
+-----------------------------------------------------------*/
+form {
+    padding-bottom: 2em;
+  } 
+.submit {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.6em;
+    padding-bottom: 0.7em;
+    cursor: pointer;
+}
+.quiz-group {
+  padding: 3em;
+}
+.quiz-padding {
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 /* -----------------------------------------------------------
@@ -281,6 +301,10 @@ div.row.row-smiley {
     margin: 0 auto 1em auto;
     cursor: pointer;
 }
+.quiz-button-result {
+    width: 300px;
+    margin: 0 auto 0.5em auto;
+}
 .quiz-button:hover {
     background: #e93a45;
     -webkit-transition: all 1s;
@@ -288,6 +312,14 @@ div.row.row-smiley {
     -o-transition: all 1s;
     -ms-transition: all 1s;
     transition: all 1s;
+}
+//QUIZ TITLE
+h3.quiz-title {
+    background: #01c1ca;
+    width: 100%;
+    height: 55px;
+    margin: 0 auto;
+    padding-top: 0.4em;
 }
 
 /* -----------------------------------------------------------
