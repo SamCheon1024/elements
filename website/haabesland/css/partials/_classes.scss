@@ -1,0 +1,419 @@
+/* -----------------------------------------------------------
+	MAIN STYLES
+-----------------------------------------------------------*/
+  .centered-child {
+	margin-left: auto;
+	margin-right: auto;
+}
+.well {
+	@include clearfix;
+	border-radius:$size-sm;
+	padding:$size-md;
+	height:auto;
+}
+
+/* ------------------------------------------------------------
+  QUIZ-FORM
+-----------------------------------------------------------*/
+form {
+    padding-bottom: 2em;
+  } 
+.submit {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.6em;
+    padding-bottom: 0.7em;
+    cursor: pointer;
+}
+.quiz-group {
+  padding: 3em;
+}
+.quiz-padding {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+/* -----------------------------------------------------------
+	NAV BAR
+-----------------------------------------------------------*/
+
+#menubar {
+    background-color: rgba(255,255,255,0.9);
+    width:100vw;
+    min-height:50px;
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    }
+.logo {
+    float:left;
+    width: 70px;
+    height: 70px;
+    margin:-5px 0px 0px 25px;
+    position: absolute;
+    }
+#menubar nav {
+    float:right;
+    margin: 20px 25px 0px 0px;
+    }
+nav ul li {
+    list-style:none;
+    float:left;
+    }
+#menubar nav a {
+  padding-left:20px;
+  padding-right:20px;
+  }
+#menubar a:hover {
+  color: #e93a45;
+    }
+#menubar .active {
+  color:#e93a45;
+}
+
+/* -----------------------------------------------------------
+  FOOTER
+-----------------------------------------------------------*/
+
+.footer {
+  background-color: #221e1f;
+  min-height: 120px;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+.footer nav {
+  display: inline-block;
+  margin: 1em auto 0.5em auto;
+}
+.footer nav a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.footer a:hover {
+  color: #e93a45;
+  }
+.footer .active {
+  color:#e93a45;
+}
+.footer-logo {
+  float: left;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto 0.5em auto;
+}
+
+/* -----------------------------------------------------------
+	ROWS AND COLUMNS
+-----------------------------------------------------------*/
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.row-vertical {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+}
+div.row.row-smiley {
+  max-width: 700px;
+}
+.col-padding {
+  padding-left:2em;
+}
+
+/* -----------------------------------------------------------
+  IMAGE ANIMATION
+  https://designshack.net/articles/css/joshuajohnson-2/
+-----------------------------------------------------------*/
+
+.pic {
+  float: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 90px;
+  margin: 0 auto 1em auto;  
+  overflow: hidden;
+}
+.morph {
+  -webkit-transition: all 0.5s;
+     -moz-transition: all 0.5s;
+       -o-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+          transition: all 0.5s;
+}
+.morph:hover {
+  border-radius: 50%;
+  -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+.blur:hover {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+  -webkit-filter: blur(5px);
+}
+
+/* -----------------------------------------------------------
+  GROUP STYLINGS
+-----------------------------------------------------------*/
+
+//HERO
+.hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height:35vh;
+}
+.hero-element {
+    float: right;
+    margin-top: 100px;
+    width: 30vw;
+    height:20vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 1em;
+}
+
+//INTRO
+.intro {
+    color: #fff;
+    padding: 2em;
+}
+.intro-element {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: auto;
+    height: 15vh;
+    margin: 0 auto;
+}
+.intro-home {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    max-height: 48vh;
+    margin: 0 auto 3em auto;
+    padding: 0.5em;
+    float: right;
+}
+
+//EMOTION
+.emotion {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height:25vh;
+    padding: 2em;
+}
+.emotion-smiley {
+    margin: 0 auto 1.5em auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+
+//PERSONALITY
+.personality {
+  padding: 2em;
+}
+.personality-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+.personality-home {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: auto;
+    height: 40vh;
+    margin: 0 auto;
+}
+
+//CYCLES
+.cycles {
+  padding: 3em;
+}
+.cycles-images-intro {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 150px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+.cycles-image {
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 30vh;
+    margin: 0 auto;
+}
+.img-cycles {
+  max-width: 600px;
+  padding-bottom: 3em;
+}
+
+//OTHERS
+.others {
+  padding-bottom: 2em;
+}
+.others-image {
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 90px;
+    margin: 0 auto 1em auto;
+}
+.others-box {
+    width: 90px;
+    background-color: #fff;
+    height: 90px;
+    border-radius: 15px;
+    margin: 0 auto 1em auto;
+    border: 2px solid #fff;
+    padding-bottom: 2em;
+}
+
+//QUIZ BUTTON
+.quiz-section {
+    background-color: #fff;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+.quiz-button {
+    background: #01c1ca;
+    width: 160px;
+    height: 55px;
+    border-radius: 15px;
+    border: 0px;
+    margin: 0 auto 1em auto;
+    cursor: pointer;
+}
+.quiz-button-result {
+    width: 300px;
+    margin: 0 auto 0.5em auto;
+}
+.quiz-button:hover {
+    background: #e93a45;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1s;
+}
+//QUIZ TITLE
+h3.quiz-title {
+    background: #01c1ca;
+    width: 100%;
+    height: 55px;
+    margin: 0 auto;
+    padding-top: 0.4em;
+}
+
+/* -----------------------------------------------------------
+  SEPARATE ELEMENTS STYLINGS
+-----------------------------------------------------------*/
+
+//SEPARATE BACKGROUND IMAGE - HERO
+.hero-home {
+    background-image: url('../img/home_bg_1.jpg');
+}
+.hero-metal {
+    background-image: url('../img/metal_bg_1.jpg');
+}
+.hero-wood {
+  background-image: url('../img/wood_bg_1.jpg');
+}
+.hero-water {
+  background-image: url('../img/water_bg_1.jpg');
+}
+.hero-fire {
+  background-image: url('../img/fire_bg_1.jpg');
+}
+.hero-earth {
+  background-image: url('../img/earth_bg_1.jpg');
+}
+
+//SEPARATE BACKGROUND IMAGE - EMOTION
+.emotion-home {
+  background-image: url('../img/home_bg_2.jpg');
+  position: relative;
+}
+.emotion-metal {
+  background-image: url('../img/metal_bg_2.jpg');
+}
+.emotion-wood {
+  background-image: url('../img/wood_bg_2.jpg');
+}
+.emotion-water {
+  background-image: url('../img/water_bg_2.jpg');
+}
+.emotion-fire {
+  background-image: url('../img/fire_bg_2.jpg');
+}
+.emotion-earth {
+  background-image: url('../img/earth_bg_2.jpg');
+}
+
+//SEPARATE COLOR - PERSONALITY
+.personality-metal {
+    background-color: #858585;
+}
+.personality-wood {
+    background-color: #6e9981;
+}
+.personality-water {
+    background-color: #09122e;
+}
+.personality-fire {
+    background-color: #f36157;
+}
+.personality-earth {
+    background-color: #f5b85b;
+}
+
+//SEPARATE COLOR - OTHERS
+.others-metal {
+    background-color: #858585;
+}
+.others-wood {
+    background-color: #6e9981;
+}
+.others-water {
+    background-color: #09122e;
+}
+.others-fire {
+    background-color: #f36157;
+}
+.others-earth {
+    background-color: #f5b85b;
+}
+
+//SEPARATE COLOR - BOX
+.box-metal {
+  background-color: #fff;
+}
+.box-wood {
+  background-color: #b0d79c;
+}
+.box-water {
+  background-color: #231f20;
+}
+.box-fire {
+  background-color: #e71c24;
+}
+.box-earth {
+  background-color: #f7dd7e;
+}

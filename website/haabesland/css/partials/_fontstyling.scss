@@ -1,0 +1,69 @@
+@font-face {font-family: Poppins;}
+
+//LIGHT COLOR
+h1, h2, h3, h4, p, .others h4, .quiz-button {
+	color:$color-light;
+}
+
+// DARK COLOR
+.personality-p, .intro p, .cycles p, .cycles h2, .cycles h3, .quiz-section h3, p.quiz, form {
+	color:$color-dark;
+}
+
+h1 {
+	font-weight:300;
+	font-size:5em;
+	margin-top:-80px;
+	//letter-spacing:5px;
+}
+.h1home {
+	margin-top: 23vh;
+}
+h2, .quiz-button {
+	font-weight: 400;
+	font-size: 2em;
+}
+.h2home {
+	font-size: 2.5em;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+}
+h3 {
+	font-weight:300;
+	font-size: 1.4em;
+	display: block;
+}
+h4 {
+	font-weight:300;
+	display: block;
+	text-align: center;
+}
+p {
+	font-weight:300;
+	padding-bottom: 1em;
+}
+p.quiz {
+	font-weight: 600;
+}
+
+#menubar a {
+	color:$color-dark;
+	text-decoration:none;
+
+	&:hover {
+		text-decoration:none;
+	}
+}
+.footer a {
+	font-weight: 300;
+	color:$color-light;
+	text-decoration:none;
+	font-size: 1em;
+
+	&:hover {
+		text-decoration:none;
+	}
+}
+.footer-p {
+	font-size: 0.8em;
+}
