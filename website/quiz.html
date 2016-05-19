@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"/>
+    <title>5 Elements</title>     
+    <meta property="og:site_name" content="5 Elements"/>
+    <meta property="og:type" content="website"/>
+    <meta name="keywords" content="Chinese, Personality, Type, Elements">
+	<meta name="author" content="Alexander Haabesland, Eunice So, Sam Cheon">
+	<meta name="description" content="Chinese Personality Types - 5 Elements">
+
+<!-- ******************************************
+                    CSS
+****************************************** -->
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/quizstyle.css">
+	
+<!-- ******************************************
+					FONTS
+****************************************** -->
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,900|Poppins:400,300,700' rel='stylesheet' type='text/css'>
+
+<!-- ******************************************
+                    JAVA
+****************************************** -->
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+			$(function(){
+				var aanswer = 0;
+				var banswer = 0;
+				var canswer = 0;
+				var danswer = 0;
+				var eanswer = 0;
+				var indexquiz = Math.floor(Math.random() * 5);
+                 
+                if(indexquiz == 1){
+                    $("#elements").show();
+                    console.log(1);
+                }
+				
+                else if(indexquiz == 0){
+                    $("#elements").show();
+                    console.log(0)
+                }
+              
+                else{
+                    $("#elements").show();
+                    console.log("else");
+                }
+               
+				
+				var height = $(window).height()/2;
+                var qboxheight = height-300;
+                var width = $(window).width()/2;
+                var thumbwidth = $(".thumbnails").width()/2;
+                
+                
+				$("#qbox").css({marginTop: qboxheight});
+                
+                $(window).resize(function(){
+                    height = $(window).height()/2;
+                    qboxheight = height-300;
+                    width = $(window).width()/2;
+                    thumbwidth = $(".thumbnails").width()/2;
+                    
+                    $("#qbox").css({marginTop: qboxheight});
+
+                });
+                
+				console.log(height)
+				$(".thumbnails").hide();
+				
+				$(".results").hide();
+				
+				
+				
+                var curslidenum = 0;
+                
+                //console.log(curslidenum);
+                
+                $(".anoqui").click(function(){
+                    $(".allquizez").hide();
+                    indexquiz = Math.floor(Math.random() * 3);
+                    if(indexquiz == 0 && $(this).not(".onpants")){
+                        $("#elements").show();
+                    }
+                    
+                    else if(indexquiz == 1 && $(this).not(".oncreature")){
+                        $("#elements").show();
+                    }
+
+                    else{
+                        $("#elements").show();
+                        console.log("else");
+                    }
+                    
+                    console.log(indexquiz)
+                    
+                      aanswer = 0;
+                      banswer = 0;
+                      canswer = 0;
+                      danswer = 0;
+                      eanswer = 0;
+
+
+                       curslidenum = -1;
+                       $(".quiz1").animate({marginTop:(curslidenum)}, 1000);
+
+
+                       $(".results").hide();
+                       //console.log("a answer:" + aanswer);
+
+                        $(".answer").removeClass("notmyanswer").removeClass("myanswer")
+
+                });
+                
+                $(".button").click(function(){
+                    curslidenum++;
+                    
+                    if(curslidenum > 11){
+                        curslidenum = 0;
+                    }
+                    
+                    
+                    $(".answer").click(function(){
+	                    
+	                    if($(this).siblings(".myanswer").hasClass("a")){
+		                    aanswer--;
+	                    }
+	                    
+	                    else if($(this).siblings(".myanswer").hasClass("b")){
+		                    banswer--;
+	                    }
+	                    
+	                    else if($(this).siblings(".myanswer").hasClass("c")){
+		                    canswer--;
+	                    }
+	                    
+	                    else if($(this).siblings(".myanswer").hasClass("d")){
+		                    danswer--;
+	                    }
+
+	                    else if($(this).siblings(".myanswer").hasClass("e")){
+		                    eanswer--;
+	                    }
+	                    
+	                   $(this).addClass("myanswer").removeClass("notmyanswer").siblings().removeClass("myanswer").addClass("notmyanswer");    
+                    });
+
+                    showslide();                   
+                    hiddenthumb();
+                });//end of button
+                
+                var answerchange = function(){
+                    
+                };
+                
+                if(curslidenum > 11){
+                    curslidenum == 0;
+                }
+                
+                
+                
+                $(".thumbnails li a").click(function(){
+                    curslidenum = $(this).parent().index();
+
+                    showslide();
+
+
+                });//end of thumbnails
+                
+            
+                
+                var hiddenthumb = function(){
+                    
+                    if (curslidenum >= 1 && curslidenum < 11){
+                        $(".thumbnails").show();
+                        
+                        //console.log("nahnah")
+                    }
+                    
+                    else{
+                        $(".thumbnails").hide();
+                        
+                        //console.log("heeey")
+                    };
+                    
+                    
+                };
+                
+                var showslide = function(){
+			
+                    $(".quiz1").animate({marginTop:(curslidenum * -620)}, 1000);
+
+                    $(".thumbnails li a").removeClass("selected");
+                    $(".thumbnails li a").eq(curslidenum).addClass("selected");
+
+                };//end showslide
+                
+               $(".a").click(function(){
+	               aanswer++;
+	               console.log("a answer:" + aanswer);
+               });
+               
+               $(".b").click(function(){
+	               banswer++;
+	               console.log("b answer:" + banswer);
+               });
+               
+               $(".c").click(function(){
+	               canswer++;
+	               console.log("c answer:" + canswer);
+               });
+               
+               $(".d").click(function(){
+	               danswer++;
+	               console.log("d answer:" + danswer);
+               });
+
+                $(".e").click(function(){
+	               eanswer++;
+	               console.log("e answer:" + eanswer);
+               });
+               
+                $(".end").click(function(){
+                    
+                    resulting();
+                    console.log("a answer:" + aanswer)
+                    console.log("b answer:" + banswer)
+                    console.log("c answer:" + canswer)
+                    console.log("d answer:" + danswer)
+                    console.log("e answer:" + eanswer)
+                })
+                
+               var resulting = function(){
+                              
+	               if(aanswer>banswer&&aanswer>canswer&&aanswer>danswer&&aanswer>eanswer){
+		               $(".aresults").show();
+		               
+	               }
+	               
+	               else if (banswer>aanswer&&banswer>canswer&&banswer>danswer&&banswer>eanswer){
+		               $(".bresults").show();
+		               
+	               }
+	               
+                   else if (canswer>aanswer&&canswer>banswer&&canswer>danswer&&canswer>eanswer){
+		               $(".cresults").show();
+		               
+	               }
+                   
+                   else if (danswer>aanswer&&danswer>canswer&&danswer>banswer&&danswer>eanswer){
+		               $(".dresults").show();
+		               
+	               }
+
+	               else if (eanswer>aanswer&&eanswer>canswer&&eanswer>banswer&&eanswer>danswer){
+		               $(".eresults").show();
+		               return;
+	               }    
+	           };
+	
+			})//end of all
+			
+		</script>
+	</head>
+	
+	<body data-gr-c-s-loaded="true">
+
+	<div id="menubar">
+      <a href="index.html" class = "display-xs-n display-sm-ib"><img class="logo" src="img/logo.svg"/></a>
+		<nav>
+			<ul>
+				<li ><a href="index.html">Home</a></li>
+				<li ><a href="metal.html">Metal</a></li>
+				<li><a href="wood.html">Wood</a></li>
+				<li><a href="water.html">Water</a></li>
+				<li><a href="fire.html">Fire</a></li>
+				<li><a href="earth.html">Earth</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<div class="container">
+<!-- ************************************************************************************ -->
+<!-- HERO  -->
+	<div class="hero hero-home" class="container-group">
+		<div class="row row-centered">
+			<div class="col-xs-12">
+				<h1 class="h1home">Quiz</h1>
+			</div>
+		</div>
+	</div>
+			<div id="qbox" style="margin-top: 0px;">
+
+				<div class="allquizez quiz1" id="elements" style="margin-top: 0px;">
+					<section class="pg1">
+						<div class="content begin">
+							
+							<div class="quiz_number"><h3>The element Quiz</h3></div>
+									<p id="start" class="button">Start!</p>
+						</div>
+					</section>
+					
+					<section class="pg2 qpage" id="quiz_2">
+						<div class="content">
+							
+							<p class="question"> 1. What is your favorite color of those listed?</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a">Red or Orange</p>
+									<p class="answer button b">Yellow or Brown</p>
+									<p class="answer button c">Green or Purple</p>
+									<p class="answer button d">Blue or Black</p>
+									<p class="answer button e">Silver, Gray or White</p>
+								</div>
+							</div>
+						</div>
+
+						
+					</section>
+					
+					<section class="pg3 qpage" id="quiz_2">
+						<div class="content">
+							
+							<p class="question">2. What are you most intrested in at this point in your life?</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a">Movement and Change</p>
+									<p class="answer button b">Building a strong support in your life</p>
+									<p class="answer button c">Personal growth</p>
+									<p class="answer button d">Renewal in your life and strength in wisdom</p>
+									<p class="answer button e">Intelligence and Creativity</p>
+								</div>
+							</div>
+						</div>				
+					
+					</section>
+					
+					<section class="pg4 qpage" id="quiz_3">
+						<div class="content">
+							
+							<p class="question">3. Would you consider yourself to be?</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a">Optimistic</p>
+									<p class="answer button b">Down to Earth</p>
+									<p class="answer button c">Creative</p>
+									<p class="answer button d">Psychic</p>
+									<p class="answer button e">Strong</p>
+								</div>
+							</div>
+						</div>
+
+						 
+					</section>
+					
+					<section class="pg5 qpage" id="quiz_4">
+						<div class="content">
+							
+							<p class="question">4. What is your favorite of the things listed below?</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a">Candles</p>
+									<p class="answer button b">Stones</p>
+									<p class="answer button c">Flowers</p>
+									<p class="answer button d">Fountains</p>
+									<p class="answer button e">Jewlery or Tools</p>
+								</div>
+							</div>
+						</div>
+					
+					</section>
+					
+                    <section class="pg6 qpage" id="quiz_5">
+	                    <div class="content">
+						
+							<p class="question">5. What is your goal in life?</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a">To be Powerful</p>
+									<p class="answer button b">To be Honest</p>
+									<p class="answer button c">To be Innovative</p>
+									<p class="answer button d">A World Travler</p>
+									<p class="answer button e">To be Succsesful</p>
+								</div>
+							</div>
+	                    </div>
+	                   
+					</section>
+
+					<section class="pg7 qpage" id="quiz_6">
+	                    <div class="content">
+						
+							<p class="question">6. What is your favorite virtue?</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a">Righteousness</p>
+									<p class="answer button b">Wisdom</p>
+									<p class="answer button c">Benevolence</p>
+									<p class="answer button d">Propriety</p>
+									<p class="answer button e">Sincerity</p>
+								</div>
+							</div>
+	                    </div>
+	                   
+					</section>
+
+					<section class="pg8 qpage" id="quiz_7">
+	                    <div class="content">
+						
+							<p class="question">7. Pick a time of day</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a">Evening</p>
+									<p class="answer button b">Noon</p>
+									<p class="answer button c">Morning</p>
+									<p class="answer button d">Night</p>
+									<p class="answer button e">Afternoon</p>
+								</div>
+							</div>
+	                    </div>
+	                   
+					</section>
+
+					<section class="pg9 qpage" id="quiz_8">
+	                    <div class="content">
+						
+							<p class="question">8. Pick a climate</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a">Windy</p>
+									<p class="answer button b">Heat</p>
+									<p class="answer button c">Humid</p>
+									<p class="answer button d">Cold</p>
+									<p class="answer button e">Dry</p>
+								</div>
+							</div>
+	                    </div>
+	                   
+					</section>
+
+					<section class="pg10 qpage" id="quiz_9">
+	                    <div class="content">
+						
+							<p class="question">9. What is your favorite of the fruit listed below?</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a">Apricot</p>
+									<p class="answer button b">Date</p>
+									<p class="answer button c">Plum</p>
+									<p class="answer button d">Pear</p>
+									<p class="answer button e">Peach</p>
+								</div>
+							</div>
+	                    </div>
+	                   
+					</section>
+
+					<section class="pg11 qpage" id="quiz_10">
+	                    <div class="content">
+						
+							<p class="question">10. Pick a month</p>
+							<div class="answerbutton">
+								<div class="wrapper">
+									<p class="answer button a end">March/June/September</p>
+									<p class="answer button b end">July/August</p>
+									<p class="answer button c end">January/February</p>
+									<p class="answer button d end">April/May</p>
+									<p class="answer button e end">October/November</p>
+								</div>
+							</div>
+	                    </div>
+	                   
+					</section>
+                
+					<section class="pg12 qpage">
+						<h3>Results!</h3>
+						<div class="question results aresults">
+							<div>You're Fire Element</div>
+							<a href="fire.html"><span class="link">Fire page >></span></a>
+						</div>
+
+						<div class="question results bresults">
+							<div>You're Earth Element</div>
+							<a href="earth.html"><span class="link">Earth page >></span></a>
+						</div>
+
+						<div class="question results cresults">
+							<div>You're Wood Element</div>
+							<a href="wood.html"><span class="link">Wood page >></span></a>
+						</div>
+
+						<div class="question results dresults">
+							<div>You're Water Element</div>
+							<a href="water.html"><span class="link">Water page >></span></a>
+						</div>
+
+						<div class="question results eresults">
+							<div>You're Metal Element</div>
+							<a href="metal.html"><span class="link">Metal page >></span></a>
+						</div>
+
+						
+					</section>
+					
+					
+				</div><!--end of quiz1-->
+				
+
+				<div class="thumbnails">
+                    <li><a href="./index.html" class="hide">0</a></li>
+                    <li><a href="#quiz_1" class="pgnum">1</a></li>
+                    <li><a href="#quiz_2" class="pgnum">2</a></li>
+                    <li><a href="#quiz_3" class="pgnum">3</a></li>
+                    <li><a href="#quiz_4" class="pgnum">4</a></li>
+                    <li><a href="#quiz_5" class="pgnum">5</a></li>
+                    <li><a href="#quiz_6" class="pgnum">6</a></li>
+                    <li><a href="#quiz_7" class="pgnum">7</a></li>
+                    <li><a href="#quiz_8" class="pgnum">8</a></li>
+                    <li><a href="#quiz_9" class="pgnum">9</a></li>
+                    <li><a href="#quiz_10" class="pgnum">10</a></li>
+                </div>
+					
+				
+			</div><!--end of qbox-->
+			
+
+<!-- ************************************************************************************ -->
+<!-- FOOTER -->
+	<div class="footer" class="container-group">
+		<div class="row row-centered">
+			<div class="col-xs-12 col-centered">
+					<nav>
+						<ul>
+							<li><a href="index.html" class="active">Home</a></li>
+							<li><a href="metal.html">Metal</a></li>
+							<li><a href="wood.html">Wood</a></li>
+							<li><a href="water.html">Water</a></li>
+							<li><a href="fire.html">Fire</a></li>
+							<li><a href="earth.html">Earth</a></li>
+						</ul>
+					</nav>
+			</div>
+			<div class="col-xs-12 col-centered">
+				<!-- <img class="morph footer-logo" src="img/logo.svg"/><br> -->
+				<p class="footer-p">Alex, Eunice &amp; Sam</p>
+			</div>
+		</div>
+	</div>
+
+	</div> <!-- Close Container -->
+</body>
+</html>
