@@ -1,3 +1,5 @@
+//Based on dragonfly - http://www.dragonflycave.com/pokesite.aspx
+
 var result;
 
    function check() {
